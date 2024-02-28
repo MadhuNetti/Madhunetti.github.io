@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tester Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        pre {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            color: #666;
+            background-color: #fafafa;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            white-space: pre-wrap; /* Allows for wrapping long lines */
+        }
+        .options {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .options a {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 10px 20px;
+            background-color: #4285f4;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .options a:hover {
+            background-color: #357ae8;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Tester Notes</h1>
+    </header>
+    <main>
+        <p>This website provides quick notes on various testing scenarios.</p>
+        <p>Here you can find notes on Asset Mismatch Apps, IP Apps, Mod Apps, and some edge case apps.</p>
+        <div class="options">
+            <a href="#asset_mismatch_notes" id="asset_mismatch_link">Asset Mismatch Apps</a>
+            <a href="#">IP Apps</a>
+            <a href="#">Mod Apps</a>
+        </div>
+        <div id="asset_mismatch_notes" style="display:none;">
+            <pre>
+                Asset Mismatch Apps:
+                
+                Example 1:
+                Asset mismatch screenshots don’t match.
+                <a href="https://cic.amazon.com/application/2258309112/multimedia.html" target="_blank">https://cic.amazon.com/application/2258309112/multimedia.html</a>
+                
+                This app contains different screenshots on the metadata page when compared with in-app content, but we still pass the app for having the same type of content.
+            </pre>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Tester Notes. All rights reserved.</p>
+    </footer>
+    <script>
+        document.getElementById('asset_mismatch_link').addEventListener('click', function(event) {
+            event.preventDefault();
+            var notesDiv = document.getElementById('asset_mismatch_notes');
+            if (notesDiv.style.display === 'none') {
+                notesDiv.style.display = 'block';
+            } else {
+                notesDiv.style.display = 'none';
+            }
+        });
+
+        // Open URL in new tab
+        document.querySelector('#asset_mismatch_notes a').addEventListener('click', function(event) {
+            event.preventDefault();
+            window.open(this.href, '_blank');
+        });
+    </script>
+</body>
+</html>
